@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &65399280
 Transform:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   StateImg: {fileID: 1558857736}
   rb: {fileID: 4310064433109683957}
   PM: {fileID: 6000068945937397449}
-  PWS: {fileID: 0}
+  PWS: {fileID: 6000068945937397451}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1224,7 @@ GameObject:
   - component: {fileID: 6000068945937397447}
   - component: {fileID: 6000068945937397449}
   - component: {fileID: 6000068945937397450}
+  - component: {fileID: 6000068945937397451}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1393,6 +1394,22 @@ MonoBehaviour:
     m_Bits: 9
   gizmoDrawPoint: 1
   gizmoDrawLink: 1
+--- !u!114 &6000068945937397451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326146359302181420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18f36238dc6b634dbef84c5c48f0591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWallStick
+  speed: 0.5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &6220110657813154115
 GameObject:
   m_ObjectHideFlags: 0
