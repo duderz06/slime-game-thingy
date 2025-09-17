@@ -2,61 +2,31 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float acceleration = 40;
-    public float friction = 5;
-    public Vector2 velocity = Vector2.zero;
+    [SerializeField] float acceleration = 40;
+    [SerializeField] float friction = 5;
+    Vector2 velocity = Vector2.zero;
+    float speed = 0;
 
-    private float speed = 0;
-
-    public float rotationSpeed = 90;
+    [SerializeField] float rotationSpeed = 90;
 
     public GameObject Camera;
 
     void Update()
     {
-
         ApplyAcceleration();
         ApplyFriction();
-
         UpdateSpeed();
-
-
         ApplyVelocity();
-
         Rotate();
-
-
-
     }
 
     void ApplyAcceleration()
     {
         Vector2 dir = Vector2.zero;
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            //dir.y += 1;
-
-        }
-
-        if (Input.GetKey(KeyCode.S)) 
-        { 
-            dir.y -= 1; 
-
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            dir.x += 1;
-
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            dir.x -= 1;
-
-        }
-
+        if (Input.GetKey(KeyCode.W)) dir.y += 1;
+        if (Input.GetKey(KeyCode.S)) dir.y -= 1; 
+        if (Input.GetKey(KeyCode.D)) dir.x += 1;
+        if (Input.GetKey(KeyCode.A)) dir.x -= 1;
 
         if (dir != Vector2.zero)
         {

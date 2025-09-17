@@ -129,13 +129,13 @@ GameObject:
   m_Component:
   - component: {fileID: 65399280}
   - component: {fileID: 65399281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: state handlere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &65399280
 Transform:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   StateImg: {fileID: 1558857736}
   rb: {fileID: 4310064433109683957}
   PM: {fileID: 6000068945937397449}
-  PWS: {fileID: 6000068945937397448}
+  PWS: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 330585550}
   - component: {fileID: 330585549}
   - component: {fileID: 330585548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 420235307864410712}
   - component: {fileID: 135131060368296846}
   - component: {fileID: 7584430887372564633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,10 +1222,10 @@ GameObject:
   - component: {fileID: 5561231003385299107}
   - component: {fileID: 4310064433109683957}
   - component: {fileID: 6000068945937397447}
-  - component: {fileID: 6000068945937397448}
   - component: {fileID: 6000068945937397449}
-  m_Layer: 0
-  m_Name: player
+  - component: {fileID: 6000068945937397450}
+  m_Layer: 6
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,22 +1354,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6000068945937397448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3326146359302181420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18f36238dc6b634dbef84c5c48f0591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 0.5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &6000068945937397449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,9 +1368,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   acceleration: 40
   friction: 5
-  velocity: {x: 0, y: 0}
   rotationSpeed: 90
   Camera: {fileID: 330585543}
+--- !u!114 &6000068945937397450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326146359302181420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab0b929822e6684c949919a9230f072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScanArms
+  armCount: 16
+  armLenght: 2
+  armPoints: 3
+  weightByDist: 1
+  arcAngle: 270
+  arcResolution: 4
+  arcLayer:
+    serializedVersion: 2
+    m_Bits: 9
+  gizmoDrawPoint: 1
+  gizmoDrawLink: 1
 --- !u!1 &6220110657813154115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1405,7 @@ GameObject:
   - component: {fileID: 8382369142645397980}
   - component: {fileID: 7066140493065439572}
   - component: {fileID: 8921301366984448089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
