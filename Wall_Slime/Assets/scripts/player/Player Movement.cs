@@ -2,70 +2,125 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float acceleration = 40;
+    public float friction = 5;
+    public Vector2 velocity = Vector2.zero;
 
+    private float speed = 0;
 
-    public float speed = 3f;
+    public float rotationSpeed = 90;
 
-    private RaycastHit hit;
-    public LayerMask groundLayer;
+    public GameObject Camera;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
+        ApplyAcceleration();
+        ApplyFriction();
 
-        float arcAngle = 270;
-        float arcRadius = speed * Time.deltaTime;
-        int arcResolution = 6;
+        UpdateSpeed();
 
-                if (ArcCast(transform.position, transform.rotation,
-            arcAngle, arcRadius, arcResolution, groundLayer, out RaycastHit hiy))
+
+        ApplyVelocity();
+
+        Rotate();
+
+
+
+    }
+
+    void ApplyAcceleration()
+    {
+        Vector2 dir = Vector2.zero;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            //dir.y += 1;
+
+        }
+
+        if (Input.GetKey(KeyCode.S)) 
+        { 
+            dir.y -= 1; 
+
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            dir.x += 1;
+
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            dir.x -= 1;
+
+        }
+
+
+        if (dir != Vector2.zero)
         {
 
-            transform.position = hit.point;
-            transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
-        
+            dir.Normalize();
+
+            velocity += acceleration * Time.deltaTime * dir;
+
         }
-    }
 
-    
-
-
-    static public bool ArcCast(Vector3 center, Quaternion rotation,
-        float angle, float radius, int resolution, LayerMask layer,
-        out RaycastHit hit)
-    { 
-    
-        rotation *= Quaternion.Euler(-angle/2, 0, 0);
-
-        for (int i = 0; i < resolution; i++) { 
-        
-            Vector3 A = center + rotation * Vector3.forward * radius;
-            rotation *= Quaternion.Euler(angle / resolution, 0, 0);
-            Vector3 B = center+rotation * Vector3.forward * radius;
-            Vector3 AB = B - A;
-
-            if (Physics.Raycast(A, AB, out hit, AB.magnitude * 1.001f, layer)) { 
-            
-                return true;
-            
-            }
-        
-        
-        }
-    
-
-        hit = new RaycastHit();
-        return false;
 
     }
 
+    void ApplyFriction()
+    {
+
+        velocity -= friction * Time.deltaTime * velocity;
+
+    }
+
+    void UpdateSpeed()
+    {
+
+        speed = velocity.magnitude;
+
+    }
+
+    void ApplyVelocity()
+    {
+
+        transform.Translate(new Vector3(velocity.x, 0, velocity.y) * Time.deltaTime);
+
+    }
+
+    void Rotate()
+    {
+       
+        float dir = 0;
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+
+            dir -= 1;
+
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            dir += 1;
+
+        }
+
+        transform.Rotate(0, rotationSpeed * Time.deltaTime * dir, 0);
+
+      
+
+
+
+        //tried to have it be based off the camera but that broke everything
+        //transform.rotation = Quaternion.Euler(0f, Camera.transform.eulerAngles.y, 0f);
+
+
+
+    }
 
 
 }
+

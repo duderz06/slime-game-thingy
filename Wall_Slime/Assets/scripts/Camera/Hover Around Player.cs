@@ -35,7 +35,7 @@ public class HoverAroundPlayer : MonoBehaviour
             if (player != null)
             {
 
-                yaw -= Input.GetAxis("Mouse X") * MouseSensitivity;
+                yaw += Input.GetAxis("Mouse X") * MouseSensitivity;
                 pitch += Input.GetAxis("Mouse Y") * MouseSensitivity;
 
                 pitch = Mathf.Clamp(pitch, PitchMin, PitchMax);
