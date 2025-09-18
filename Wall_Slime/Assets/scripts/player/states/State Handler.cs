@@ -15,6 +15,12 @@ public class StateHandler : MonoBehaviour
 
     public PlayerMovement PM;
     public PlayerWallStick PWS;
+    public BouncePlayerMovement BPM;
+
+    private RaycastHit hit;
+    public LayerMask groundLayer;
+    public float groundedLength = 1f;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,9 +46,9 @@ public class StateHandler : MonoBehaviour
 
         }
 
+        //Debug.DrawLine(transform.position, -transform.up * groundedLength, Color.blue);
 
-        // make so you cant do it in the air
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && Physics.Raycast(transform.position,-transform.up , out hit, groundedLength, groundLayer)) {
 
 
             Stick = !Stick;
@@ -50,7 +56,10 @@ public class StateHandler : MonoBehaviour
         }
 
 
+
         rb.useGravity = !Stick;
+        BPM.enabled = !Stick;
+
 
         PM.enabled = Stick;
         PWS.enabled = Stick;
