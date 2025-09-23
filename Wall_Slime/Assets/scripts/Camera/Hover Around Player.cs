@@ -5,6 +5,7 @@ using UnityEngine;
 public class HoverAroundPlayer : MonoBehaviour
 {
     private GameObject player;
+    public Transform RotationHolder;
     public float Distance = 10.0f;
     public float MaxDistance = 15.0f;
     public float MinDistance = 3.0f;
