@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class StateHandler : MonoBehaviour
 {
-
     public bool Stick = true;
 
     public Sprite StickSprite;
@@ -11,48 +10,25 @@ public class StateHandler : MonoBehaviour
 
     public Image StateImg;
 
-    public Rigidbody rb;
-
     public PlayerWallStick PWS;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-
         if (Stick)
         {
-
             StateImg.sprite = StickSprite;
-
         }
 
-        else {
-
-
+        else
+        {
             StateImg.sprite = BounceSprite;
-
         }
 
-
-        // make so you cant do it in the air
-        if (Input.GetKeyDown(KeyCode.Space)) {
-
-
+        if (Input.GetKeyDown(KeyCode.F))
+        {
             Stick = !Stick;
-        
+            PWS.isStick = Stick;
         }
-
-
-        rb.useGravity = !Stick;
-
-        PWS.enabled = Stick;
-
     }
 
 
