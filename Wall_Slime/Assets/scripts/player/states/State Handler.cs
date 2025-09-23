@@ -13,7 +13,6 @@ public class StateHandler : MonoBehaviour
 
     public Rigidbody rb;
 
-    public PlayerMovement PM;
     public PlayerWallStick PWS;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -52,7 +51,6 @@ public class StateHandler : MonoBehaviour
 
         rb.useGravity = !Stick;
 
-        PM.enabled = Stick;
         PWS.enabled = Stick;
 
     }
