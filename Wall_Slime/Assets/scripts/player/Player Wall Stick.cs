@@ -32,12 +32,12 @@ public class PlayerWallStick : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        /*if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             jumping = true;
             grounded = false;
             Invoke(nameof(Jump), 0.05f);
-        }
+        }*/
 
         if (!grounded || !isStick)
         {
