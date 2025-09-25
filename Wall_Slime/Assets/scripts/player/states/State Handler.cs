@@ -14,23 +14,20 @@ public class StateHandler : MonoBehaviour
 
     void Update()
     {
-        if (Stick)
-        {
-            StateImg.sprite = StickSprite;
-        }
+        // if (Stick)
+        // {
+        //     StateImg.sprite = StickSprite;
+        // }
 
-        else
-        {
-            StateImg.sprite = BounceSprite;
-        }
+        // else
+        // {
+        //     StateImg.sprite = BounceSprite;
+        // }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Stick = !Stick;
-            PWS.isStick = Stick;
+            PWS.SwapState(Stick);
         }
     }
-
-
-
 }
