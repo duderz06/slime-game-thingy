@@ -4,31 +4,16 @@ public class CameraClip : MonoBehaviour
 {
     public Transform player;
     public LayerMask groundLayer;
-
+    public float maxDistance = 10f;
     private RaycastHit hit;
-
-    private Vector3 defaultPos;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-        defaultPos = transform.localPosition;
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Linecast(player.position, transform.position, out hit, groundLayer))
+        Vector3 dir = transform.position - player.position;
+        if (Physics.Raycast(player.position, dir.normalized, out hit, maxDistance, groundLayer))
         {
-
-            transform.position = hit.point;
-
-        }
-        else
-        {
-            transform.localPosition = defaultPos;
+            transform.position = hit.point - (dir.normalized * 0.5f);
         }
     }
 }

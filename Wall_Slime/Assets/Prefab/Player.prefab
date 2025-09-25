@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b521e483e5ed09141bdadb4e301fa8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLook
-  sensitivity: 2
+  sensitivity: 1.5
   yRotationLimit: 88
   rotationHolder: {fileID: 3237342540399974352}
 --- !u!1 &7101469652530324924
@@ -556,6 +556,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 9
+  maxDistance: 10
 --- !u!1 &7629729671775362197
 GameObject:
   m_ObjectHideFlags: 0
