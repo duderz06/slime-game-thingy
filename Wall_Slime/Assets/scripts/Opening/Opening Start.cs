@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class OpeningStart : MonoBehaviour
 {
+
+   
 
     public GameObject Player;
     public GameObject StartCamera;
@@ -31,10 +34,16 @@ public class OpeningStart : MonoBehaviour
 
     public PlayerMovement PM;
 
+    public GameObject FadeObj;
+    public Image Fade;
+    public float FadeSpeed = 1f;
+    public Color FadedColor;
+    public Color FullColor;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
 
         StartCoroutine("BreakTube");
     }
@@ -281,11 +290,15 @@ public class OpeningStart : MonoBehaviour
 
             Player.transform.localScale = size;
 
-            yield return null;
+
 
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+
+        StartCoroutine("FadeInOut");
+
+        yield return new WaitForSeconds(0.5f);
 
 
         Destroy(StartCamera);
@@ -295,6 +308,49 @@ public class OpeningStart : MonoBehaviour
 
 
 
+
+    }
+
+
+
+
+    public IEnumerator FadeInOut() {
+
+        FadeObj.SetActive(true);
+
+        Color ImgCol = Fade.color;
+
+        while (ImgCol.a < 0.95f) {
+
+      
+
+            ImgCol = Color.Lerp(ImgCol, FullColor, FadeSpeed*Time.deltaTime);
+
+            Fade.color = ImgCol;
+
+            yield return null;
+        }
+
+        ImgCol.a = 255;
+
+        yield return new WaitForSeconds(0.1f);
+
+
+        while (ImgCol.a > 0.05f)
+        {
+     
+
+
+            ImgCol = Color.Lerp(ImgCol, FadedColor, FadeSpeed * Time.deltaTime);
+
+            Fade.color = ImgCol;
+
+
+
+            yield return null;
+        }
+
+        FadeObj.SetActive(false);
 
     }
 

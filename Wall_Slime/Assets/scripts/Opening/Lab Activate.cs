@@ -11,6 +11,10 @@ public class LabActivate : MonoBehaviour
     public GameObject LabStuff;
 
 
+    public AudioSource SpeakerAudioSource;
+    public AudioClip PlayerSeenSfx;
+
+
     void Update()
     {
 
@@ -63,6 +67,7 @@ public class LabActivate : MonoBehaviour
             yield return null;
         }
 
+        SpeakerAudioSource.PlayOneShot(PlayerSeenSfx, PlayerSeenSfx.length);
 
         yield return new WaitForSeconds(1f);
 
