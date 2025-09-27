@@ -67,7 +67,8 @@ public class LabActivate : MonoBehaviour
             yield return null;
         }
 
-        SpeakerAudioSource.PlayOneShot(PlayerSeenSfx, PlayerSeenSfx.length);
+        SpeakerAudioSource.PlayOneShot(PlayerSeenSfx, 1f);
+
 
         yield return new WaitForSeconds(1f);
 

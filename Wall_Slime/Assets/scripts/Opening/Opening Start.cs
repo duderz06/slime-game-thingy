@@ -30,7 +30,8 @@ public class OpeningStart : MonoBehaviour
     public float TubeGooShrinkSpeed = 5f;
     public float PlayerGrowSpeed = 5f;
 
-    public GameObject PlayerGrowParticles;
+    public ParticleSystem PlayerGrowParticles;
+    public ParticleSystem GlassBreakParticle;
 
     public PlayerMovement PM;
 
@@ -66,8 +67,14 @@ public class OpeningStart : MonoBehaviour
 
         Player.SetActive(false);
         PlayerRaycaster.SetActive(false);
-        PlayerGrowParticles.SetActive(false);
         PM.enabled = false;
+
+        PlayerGrowParticles.Stop();
+
+
+        bool glass1=false;
+        bool glass2=false;
+        bool glass3=false;
 
         while (hits < MaxHits)
         {
@@ -93,8 +100,10 @@ public class OpeningStart : MonoBehaviour
             }
 
 
-            if (hits < quarterhits)
+            if (hits < quarterhits&&!glass1)
             {
+
+                glass1=true;
 
                 TubeGlass1.SetActive(true);
                 TubeGlass2.SetActive(false);
@@ -103,23 +112,27 @@ public class OpeningStart : MonoBehaviour
 
             }
 
-            if (hits >= quarterhits && hits < quarterhits * 2)
+            if (hits >= quarterhits && hits < quarterhits * 2 && !glass2)
             {
 
                 TubeGlass1.SetActive(false);
                 TubeGlass2.SetActive(true);
                 TubeGlass3.SetActive(false);
 
+                glass2 = true;
+                GlassBreakParticle.Play();
 
             }
 
-            if (hits >= quarterhits * 2 && hits < quarterhits * 3)
+            if (hits >= quarterhits * 2 && hits < quarterhits * 3 && !glass3)
             {
 
                 TubeGlass1.SetActive(false);
                 TubeGlass2.SetActive(false);
                 TubeGlass3.SetActive(true);
 
+                glass3 = true;
+                GlassBreakParticle.Play();
 
             }
 
@@ -133,6 +146,7 @@ public class OpeningStart : MonoBehaviour
         TubeGlass2.SetActive(false);
         TubeGlass3.SetActive(false);
         Hint.SetActive(false);
+        GlassBreakParticle.Play();
 
 
         StartCoroutine("SlimeFlow");
@@ -169,11 +183,14 @@ public class OpeningStart : MonoBehaviour
         }
 
         TubeGoo.transform.position = GooFlowSpot.position;
+        yield return new WaitForSeconds(0.5f);
 
-        yield return new WaitForSeconds(1f);
+        PlayerGrowParticles.Play();
+
+        yield return new WaitForSeconds(0.5f);
 
 
-        bool StartedPlayerGrow=false;
+        bool StartedPlayerGrow =false;
         while (TubeGoo.transform.localScale != new Vector3(0, 0, 0))
         {
 
@@ -238,7 +255,7 @@ public class OpeningStart : MonoBehaviour
 
     public IEnumerator GrowPlayer() {
 
-        PlayerGrowParticles.SetActive(true);
+        PlayerGrowParticles.Play();
 
         Player.transform.localScale = new Vector3(0, 0, 0);
         Player.SetActive(true);
@@ -304,7 +321,7 @@ public class OpeningStart : MonoBehaviour
         Destroy(StartCamera);
         PlayerRaycaster.SetActive(true);
         PM.enabled = true;
-        PlayerGrowParticles.SetActive(false);
+        PlayerGrowParticles.Stop();
 
 
 
