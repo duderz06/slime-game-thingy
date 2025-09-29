@@ -810,7 +810,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5be8cdab133061248a3375deafdceac5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: d3ea77c20a0e106458e28618fe6c4d98, type: 2}
+      objectReference: {fileID: 2100000, guid: db047cbb466a6ee4a8319298c0ebe180, type: 2}
     - target: {fileID: 919132149155446097, guid: 5be8cdab133061248a3375deafdceac5, type: 3}
       propertyPath: m_Name
       value: CyanSlimeO2

@@ -12,7 +12,7 @@ public class SpeedrunTimer : MonoBehaviour
 
     public TextMeshProUGUI TimerText;
 
-    private float timer = 0f;
+    public float timer = 0f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
