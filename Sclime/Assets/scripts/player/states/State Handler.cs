@@ -8,21 +8,49 @@ public class StateHandler : MonoBehaviour
     public Sprite StickSprite;
     public Sprite BounceSprite;
 
-    public Image StateImg;
+    private Image StateImg;
 
     public PlayerWallStick PWS;
 
+    public Material StickMat;
+    public Material BounceMat;
+
+    public Renderer PlayerMat;
+
+    public ParticleSystem SlimePart;
+    public Color StickPartColor;
+    public Color BouncePartColor;
+
+
+
+
+    void Start() {
+
+        StateImg = GameObject.Find("state image").GetComponent<Image>();
+
+
+    }
+
+
     void Update()
     {
-        // if (Stick)
-        // {
-        //     StateImg.sprite = StickSprite;
-        // }
 
-        // else
-        // {
-        //     StateImg.sprite = BounceSprite;
-        // }
+        var SlimePartMain = SlimePart.main;
+
+
+        if (Stick)
+        {
+            StateImg.sprite = StickSprite;
+            PlayerMat.material = StickMat;
+            SlimePartMain.startColor = StickPartColor;
+        }
+
+        else
+        {
+            StateImg.sprite = BounceSprite;
+            PlayerMat.material = BounceMat;
+            SlimePartMain.startColor = BouncePartColor;
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

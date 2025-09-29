@@ -41,6 +41,8 @@ public class OpeningStart : MonoBehaviour
     public Color FadedColor;
     public Color FullColor;
 
+    public GameObject UiStateImage;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -67,6 +69,7 @@ public class OpeningStart : MonoBehaviour
 
         Player.SetActive(false);
         PlayerRaycaster.SetActive(false);
+        UiStateImage.SetActive(false);
         PM.enabled = false;
 
         PlayerGrowParticles.Stop();
@@ -351,6 +354,7 @@ public class OpeningStart : MonoBehaviour
         ImgCol.a = 255;
 
         yield return new WaitForSeconds(0.1f);
+        UiStateImage.SetActive(true);
 
 
         while (ImgCol.a > 0.05f)
