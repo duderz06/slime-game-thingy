@@ -70,10 +70,13 @@ public class PlayerWallStick : MonoBehaviour
 
     private void Eject() //launches player from wall if unsticking or switching
     {
-        rb.AddForce(player.up * jumpForce, ForceMode.Impulse);
-        player.rotation = Quaternion.identity;
+        if (!grounded)
+        {
+            rb.AddForce(player.up * jumpForce, ForceMode.Impulse);
+            player.rotation = Quaternion.identity;
 
-        Invoke(nameof(ResetLeniancy), jumpLenaincy);
+            Invoke(nameof(ResetLeniancy), jumpLenaincy);
+        }
     }
 
     void FixedUpdate()
