@@ -14,8 +14,7 @@ public class EndLevel : MonoBehaviour
 
 
     private RectTransform LevelWipe;
-    private RectTransform LevelSelectButton;
-    private RectTransform nextLevelButton;
+    private RectTransform Buttons;
     public float LevelWipeSpeed=3f;
 
 
@@ -23,10 +22,9 @@ public class EndLevel : MonoBehaviour
 
         ST = FindFirstObjectByType<SpeedrunTimer>();
         LevelWipe = GameObject.Find("Level Wipe").GetComponent<RectTransform>();
-        LevelSelectButton = GameObject.Find("LEVEL SELECT").GetComponent<RectTransform>();
-        nextLevelButton = GameObject.Find("NEXT LEVEL").GetComponent<RectTransform>();
+        Buttons = GameObject.Find("Buttons").GetComponent<RectTransform>();
         ResultTime = GameObject.Find("Result Time").GetComponent<TextMeshProUGUI>();
-    
+
     }
 
     public void EndTheLevel() {
@@ -78,35 +76,34 @@ public class EndLevel : MonoBehaviour
         LevelWipe.anchoredPosition = TargPos;
 
 
-        StartCoroutine("LevelSelectButtonUp");
+        StartCoroutine("ButtonsUp");
+
 
     }
 
-    public IEnumerator LevelSelectButtonUp() {
+    public IEnumerator ButtonsUp() {
 
 
-        Vector2 TargPos = new Vector2(250,-170);
-        Vector2 TargPos2 = new Vector2(-290, -185);
+        Vector2 TargPos = new Vector2(0, -185);
 
 
-        while (Vector2.Distance(LevelSelectButton.anchoredPosition, TargPos2) > 0.1f && Vector2.Distance(nextLevelButton.anchoredPosition, TargPos) > 0.1f)
+        while (Vector2.Distance(Buttons.anchoredPosition, TargPos) > 0.1f)
         {
 
-            nextLevelButton.anchoredPosition = Vector2.Lerp(LevelSelectButton.anchoredPosition, TargPos, LevelWipeSpeed * Time.deltaTime);
-            LevelSelectButton.anchoredPosition = Vector2.Lerp(LevelSelectButton.anchoredPosition, TargPos2, LevelWipeSpeed * Time.deltaTime);
+            Buttons.anchoredPosition = Vector2.Lerp(Buttons.anchoredPosition, TargPos, LevelWipeSpeed * Time.deltaTime);
 
             yield return null;
 
         }
 
-        nextLevelButton.anchoredPosition = TargPos;
-        LevelSelectButton.anchoredPosition = TargPos2;
+        Buttons.anchoredPosition = TargPos;
 
 
     }
 
 
-    
+   
+
 
 
 }
