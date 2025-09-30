@@ -15,6 +15,7 @@ public class PlayerWallStick : MonoBehaviour
     public LayerMask groundLayer;
     public Transform player;
     public Quaternion rot = Quaternion.Euler(0, 0, 0);
+    private bool resetRotation = false;
 
     [Header("Strafe")]
     public float strafeSpeed = 2f;
@@ -36,6 +37,16 @@ public class PlayerWallStick : MonoBehaviour
         {
             rb.useGravity = true;
             Strafe();
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (resetRotation)
+        {
+            Debug.Log("aaaaaaaaaaaaaaaaa");
+            resetRotation = false;
+            player.rotation = Quaternion.identity;
         }
     }
 
@@ -71,7 +82,7 @@ public class PlayerWallStick : MonoBehaviour
     private void Eject() //launches player from wall if unsticking or switching
     {
         rb.AddForce(player.up * jumpForce, ForceMode.Impulse);
-        player.rotation = Quaternion.identity;
+        resetRotation = true;
 
         Invoke(nameof(ResetLeniancy), jumpLenaincy);
     }
