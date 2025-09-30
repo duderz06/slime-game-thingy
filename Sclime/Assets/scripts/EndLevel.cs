@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 
 public class EndLevel : MonoBehaviour
 {
@@ -14,14 +15,16 @@ public class EndLevel : MonoBehaviour
 
     private RectTransform LevelWipe;
     private RectTransform LevelSelectButton;
+    private RectTransform nextLevelButton;
     public float LevelWipeSpeed=3f;
 
 
     void Start() {
 
-        ST = FindObjectOfType<SpeedrunTimer>();
+        ST = FindFirstObjectByType<SpeedrunTimer>();
         LevelWipe = GameObject.Find("Level Wipe").GetComponent<RectTransform>();
-        LevelSelectButton = GameObject.Find("Level Select Button").GetComponent<RectTransform>();
+        LevelSelectButton = GameObject.Find("LEVEL SELECT").GetComponent<RectTransform>();
+        nextLevelButton = GameObject.Find("NEXT LEVEL").GetComponent<RectTransform>();
         ResultTime = GameObject.Find("Result Time").GetComponent<TextMeshProUGUI>();
     
     }
@@ -41,11 +44,8 @@ public class EndLevel : MonoBehaviour
         }
 
         StartCoroutine("LevelWipeToCenter");
-
-
-
-
-
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 
@@ -86,19 +86,21 @@ public class EndLevel : MonoBehaviour
 
 
         Vector2 TargPos = new Vector2(250,-170);
+        Vector2 TargPos2 = new Vector2(-290, -185);
 
 
-        while (Vector2.Distance(LevelSelectButton.anchoredPosition, TargPos) > 0.1f)
+        while (Vector2.Distance(LevelSelectButton.anchoredPosition, TargPos2) > 0.1f && Vector2.Distance(nextLevelButton.anchoredPosition, TargPos) > 0.1f)
         {
 
-
-            LevelSelectButton.anchoredPosition = Vector2.Lerp(LevelSelectButton.anchoredPosition, TargPos, LevelWipeSpeed * Time.deltaTime);
+            nextLevelButton.anchoredPosition = Vector2.Lerp(LevelSelectButton.anchoredPosition, TargPos, LevelWipeSpeed * Time.deltaTime);
+            LevelSelectButton.anchoredPosition = Vector2.Lerp(LevelSelectButton.anchoredPosition, TargPos2, LevelWipeSpeed * Time.deltaTime);
 
             yield return null;
 
         }
 
-        LevelSelectButton.anchoredPosition = TargPos;
+        nextLevelButton.anchoredPosition = TargPos;
+        LevelSelectButton.anchoredPosition = TargPos2;
 
 
     }
