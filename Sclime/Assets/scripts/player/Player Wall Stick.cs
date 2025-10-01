@@ -15,15 +15,16 @@ public class PlayerWallStick : MonoBehaviour
     public LayerMask groundLayer;
     public Transform player;
     public Quaternion rot = Quaternion.Euler(0, 0, 0);
-    private bool resetRotation = false;
+    private bool unsticking = false;
+    private bool queUnstick = false;
 
     [Header("Strafe")]
-    public float strafeSpeed = 2f;
+    public float strafeSpeed = 5f;
+    private bool strafing = false;
     
     [Header("Jump")]
     public float jumpForce = 10f;
-    public float jumpLenaincy = 0.2f;
-    public bool jumping = false;
+    private float jumpLenaincy = 0.5f;
     public bool grounded = true;
 
     void Start()
@@ -36,17 +37,16 @@ public class PlayerWallStick : MonoBehaviour
         if (!grounded || !isStick)
         {
             rb.useGravity = true;
-            Strafe();
-        }
-    }
+            float vertical = Input.GetAxisRaw("Vertical");
+            float horizontal = Input.GetAxisRaw("Horizontal");
 
-    private void LateUpdate()
-    {
-        if (resetRotation)
+            direction = new Vector3(horizontal, 0f, vertical);
+            direction = transform.forward * vertical + transform.right * horizontal;
+            strafing = true;
+        }
+        else
         {
-            Debug.Log("aaaaaaaaaaaaaaaaa");
-            resetRotation = false;
-            player.rotation = Quaternion.identity;
+            strafing = false;
         }
     }
 
@@ -56,25 +56,13 @@ public class PlayerWallStick : MonoBehaviour
 
         if (!isStick && grounded)
         {
-            Unstick();
+            queUnstick = true;
         }
-    }
-
-    private void Strafe()
-    {
-        float vertical = Input.GetAxisRaw("Vertical");
-        float horizontal = Input.GetAxisRaw("Horizontal");
-
-        direction = new Vector3(horizontal, 0f, vertical);
-        direction = transform.forward * vertical + transform.right * horizontal;
-
-        rb.AddForce(direction.normalized * strafeSpeed, ForceMode.Acceleration);
     }
 
     private void Unstick()
     {
-        Debug.Log("Unsticking");
-        jumping = true;
+        unsticking = true;
         grounded = false;
         Invoke(nameof(Eject), 0.05f);
     }
@@ -82,8 +70,7 @@ public class PlayerWallStick : MonoBehaviour
     private void Eject() //launches player from wall if unsticking or switching
     {
         rb.AddForce(player.up * jumpForce, ForceMode.Impulse);
-        resetRotation = true;
-
+        player.rotation = Quaternion.identity;
         Invoke(nameof(ResetLeniancy), jumpLenaincy);
     }
 
@@ -93,13 +80,18 @@ public class PlayerWallStick : MonoBehaviour
         float arcRadius = speed;
         int arcResolution = 6;
 
-        if (!jumping && isStick)
+        if (strafing)
+        {
+            rb.AddForce(direction.normalized * strafeSpeed, ForceMode.Force);
+        }
+
+        if (!queUnstick && !unsticking && isStick)
         {
             if (ArcCast(transform.position, transform.rotation * rot,
             arcAngle, arcRadius, arcResolution, groundLayer, out RaycastHit hit))
             {
                 grounded = true;
-                if (isMoving)
+                if (isMoving && !unsticking)
                 {
                     rb.MovePosition(hit.point);
                     //player.position = hit.point;
@@ -111,14 +103,20 @@ public class PlayerWallStick : MonoBehaviour
             }
             else if (grounded)
             {
-                Unstick();
+                queUnstick = true;
             }
+        }
+
+        if (queUnstick)
+        {
+            Unstick();
+            queUnstick = false;
         }
     }
 
     private void ResetLeniancy()
     {
-        jumping = false;
+        unsticking = false;
     }
 
     static public bool ArcCast(Vector3 center, Quaternion rotation,
