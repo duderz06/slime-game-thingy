@@ -64,7 +64,7 @@ public class PlayerWallStick : MonoBehaviour
     {
         unsticking = true;
         grounded = false;
-        Invoke(nameof(Eject), 0.05f);
+        Invoke(nameof(Eject), 0.5f);
     }
 
     private void Eject() //launches player from wall if unsticking or switching
