@@ -14,9 +14,6 @@ public class dialouge : MonoBehaviour
 
 
     private GameObject player;
-    private GameObject cam;
-    private GameObject canvas;
-    public GameObject campoint;
 
 
     public bool istalking = false;
@@ -31,8 +28,13 @@ public class dialouge : MonoBehaviour
     private int i;
 
 
+    private PlayerWallStick PWS;
+    private StateHandler SH;
 
-   
+
+
+
+
 
     private float camspeed = 5f;
 
@@ -54,32 +56,20 @@ public class dialouge : MonoBehaviour
             i = 0;
             donetalking = false;
 
+            PWS.enabled = false;
+            SH.enabled = false;
+
           
             dialogbox.SetActive(true);
             dialogtext.text = "";
 
             playerpos=player.transform.position;
 
-            Vector3 midpoint = (this.transform.position + player.transform.position) / 2f;
-
-           
-
-            float dist = Vector3.Distance(this.transform.position, player.transform.position);
-
-
-            GameObject mid =Instantiate(campoint, midpoint, Quaternion.identity);
-
-            mid.transform.LookAt(player.gameObject.transform);
+         
 
 
 
-            Vector3 offset = mid.transform.right * (dist * 2f);
-
-            GameObject point1 = Instantiate(campoint, mid.transform.position + offset, Quaternion.identity);
-            GameObject point2 = Instantiate(campoint, mid.transform.position - offset, Quaternion.identity);
-
-            Destroy(mid);
-
+        
         }
 
     }
@@ -94,7 +84,8 @@ public class dialouge : MonoBehaviour
             substring = "";
             i = 0;
             donetalking = false;
-
+            PWS.enabled = true;
+            SH.enabled = true;
 
             dialogbox.SetActive(false);
             dialogtext.text = "";
@@ -121,13 +112,13 @@ public class dialouge : MonoBehaviour
     {
 
         player = GameObject.FindWithTag("Player");
-        cam = GameObject.FindWithTag("MainCamera");
-        canvas = GameObject.FindWithTag("canvas");
-       
 
         donetalking = false;
         amountofsfx = sfx.Count;
 
+
+        PWS = FindAnyObjectByType<PlayerWallStick>();
+        SH = FindAnyObjectByType<StateHandler>();
 
     }
 
@@ -141,35 +132,6 @@ public class dialouge : MonoBehaviour
 
 
             player.transform.position = playerpos;
-
-            float closedist = Mathf.Infinity;
-
-            Vector3 midpoint = (this.transform.position + player.transform.position) / 2f;
-            Vector3 pointcamgo = new Vector3(0,0,0);
-
-
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("dialog cam point"))
-            {
-
-                float distance = Vector3.Distance(obj.transform.position, cam.transform.position);
-                if (distance < closedist)
-                {
-
-                    closedist = distance;
-                    pointcamgo = obj.transform.position;
-
-
-                }
-
-
-
-            }
-
-            cam.transform.position = Vector3.Lerp(cam.transform.position, pointcamgo, camspeed * Time.deltaTime);
-
-            //cam.transform.position= pointcamgo;
-            cam.transform.LookAt(midpoint);
-
 
 
             texttimer += Time.deltaTime;
