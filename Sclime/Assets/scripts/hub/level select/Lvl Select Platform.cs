@@ -11,11 +11,13 @@ public class LvlSelectPlatform : MonoBehaviour
     public Transform PlayerCamSpot;
 
     private CameraFollow CF;
+    private PlayerLook PL;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         CF = FindObjectOfType<CameraFollow>();
+        PL = FindObjectOfType<PlayerLook>();
 
 
     }
@@ -31,7 +33,7 @@ public class LvlSelectPlatform : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
 
         if (col.CompareTag("Player")) { 
@@ -40,6 +42,7 @@ public class LvlSelectPlatform : MonoBehaviour
 
             CF.target = StandOnCamSpot;
 
+            PL.ToggleCursor();
 
         }
 
@@ -56,6 +59,7 @@ public class LvlSelectPlatform : MonoBehaviour
 
             PlayerOn = false;
             CF.target = PlayerCamSpot;
+            PL.ToggleCursor();
 
         }
 
