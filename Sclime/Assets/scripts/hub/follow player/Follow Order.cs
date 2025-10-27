@@ -56,7 +56,8 @@ public class FollowOrder : MonoBehaviour
 
                 else
                 {
-                    nav.Target = Followers[i - 1];
+
+                    nav.Target = Followers[i - 1].transform.Find("follower target").gameObject;
 
                 }
 
