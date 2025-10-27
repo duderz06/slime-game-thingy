@@ -35,9 +35,8 @@ public class CenterStuff : MonoBehaviour
 
         for (int i = 0; i < Stuff.Count; i++)
         {
-            Vector3 pos = new Vector3(StartPos.x, StartPos.y, z + i * Distance);
-
-            Stuff[i].position = pos;
+            Vector3 pos = new Vector3(0f, 0f, z + i * Distance);
+            Stuff[i].localPosition = pos;
 
 
         }
