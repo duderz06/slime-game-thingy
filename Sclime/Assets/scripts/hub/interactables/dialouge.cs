@@ -91,14 +91,6 @@ public class dialouge : MonoBehaviour
             dialogtext.text = "";
 
 
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("dialog cam point"))
-            {
-
-                Destroy(obj);
-
-
-            }
-
 
 
 
