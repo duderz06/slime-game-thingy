@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3782858726382448750}
-  - component: {fileID: 8908853795606873164}
   m_Layer: 0
   m_Name: Audio Handler
   m_TagString: Audio
@@ -34,28 +33,6 @@ Transform:
   - {fileID: 2332557486894873441}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8908853795606873164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682034188101296904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e45a472b64bd344a338c17afcaa868, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SFXSource: {fileID: 3897403376251471955}
-  musicSource: {fileID: 7210331204496425517}
-  SFXAudioClips:
-  - {fileID: 8300000, guid: c86e22d92fb7f004abfbb46f2269c997, type: 3}
-  - {fileID: 8300000, guid: 64fb5927629cf9540bbb6bb515e1e3b7, type: 3}
-  - {fileID: 8300000, guid: f9e74da00a5370842a36db0c6a6f0d94, type: 3}
-  musicAudioClips:
-  - {fileID: 8300000, guid: ab6a31ccd78a2204bb2d0ff74e3c057e, type: 3}
-  - {fileID: 8300000, guid: 195e30e1f11a6c5449170a0fde339377, type: 3}
-  chosenMusic: 1
 --- !u!1 &3508816803278820871
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +76,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -227,6 +205,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1

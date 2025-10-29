@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class AudioHandler : MonoBehaviour
 {
+    public static AudioHandler Instance;
+
     //Static Variables for keeping track of how loud the player wants the sound effects and music
     public static float SFXVolume = 0.5f;
     public static float musicVolume = 0.5f;
@@ -27,7 +29,12 @@ public class AudioHandler : MonoBehaviour
         musicSource.Play();
         musicSource.loop = true;
 
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance == null) // Without this code, there are duplicating audiohandlers across levels
+            Instance = this;
+        else
+            Destroy(this);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     //PlaySound is a method to call to play sounds from other scripts
