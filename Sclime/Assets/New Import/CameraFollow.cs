@@ -20,26 +20,14 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        float rotTimer = 0f;
         if (transform.rotation != target.rotation)
         {
-            rotTimer += Time.deltaTime * speed;
-            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, rotTimer);
-        }
-        else
-        {
-            rotTimer = 0;
+            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, Time.deltaTime * speed);
         }
 
-        float posTimer = 0f;
         if (transform.position != target.position)
         {
-            posTimer += Time.deltaTime * speed;
-            transform.position = Vector3.Lerp(transform.position, target.position, posTimer);
-        }
-        else
-        {
-            posTimer = 0;
+            transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);
         }
     }
 }
