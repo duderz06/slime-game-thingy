@@ -24,7 +24,7 @@ public class PlayerWallStick : MonoBehaviour
     
     [Header("Jump")]
     public float jumpForce = 10f;
-    private float jumpLenaincy = 0.5f;
+    private float jumpLeniency = 0.5f;
     public bool grounded = true;
 
     void Start()
@@ -40,7 +40,6 @@ public class PlayerWallStick : MonoBehaviour
             float vertical = Input.GetAxisRaw("Vertical");
             float horizontal = Input.GetAxisRaw("Horizontal");
 
-            direction = new Vector3(horizontal, 0f, vertical);
             direction = transform.forward * vertical + transform.right * horizontal;
             strafing = true;
         }
@@ -71,7 +70,7 @@ public class PlayerWallStick : MonoBehaviour
     {
         rb.AddForce(player.up * jumpForce, ForceMode.Impulse);
         player.rotation = Quaternion.identity;
-        Invoke(nameof(ResetLeniancy), jumpLenaincy);
+        Invoke(nameof(ResetLeniancy), jumpLeniency);
     }
 
     void FixedUpdate()

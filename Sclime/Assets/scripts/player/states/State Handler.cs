@@ -15,14 +15,12 @@ public class StateHandler : MonoBehaviour
     public Material StickMat;
     public Material BounceMat;
 
+    public GameObject Player;
     public Renderer PlayerMat;
 
     public ParticleSystem SlimePart;
     public Color StickPartColor;
     public Color BouncePartColor;
-
-
-
 
     void Start() {
 
@@ -31,12 +29,9 @@ public class StateHandler : MonoBehaviour
 
     }
 
-
     void Update()
     {
-
         var SlimePartMain = SlimePart.main;
-
 
         if (Stick)
         {
@@ -44,7 +39,6 @@ public class StateHandler : MonoBehaviour
             PlayerMat.material = StickMat;
             SlimePartMain.startColor = StickPartColor;
         }
-
         else
         {
             StateImg.sprite = BounceSprite;
