@@ -9,7 +9,6 @@ public class ButtonSceneSelect : MonoBehaviour
 
     public void OnMouseDown() {
 
-        Debug.Log("Clicked object: " + gameObject.name);
         SceneManager.LoadScene(SceneToGoTo);
 
 
