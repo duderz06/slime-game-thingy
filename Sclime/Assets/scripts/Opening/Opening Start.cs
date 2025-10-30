@@ -49,6 +49,7 @@ public class OpeningStart : MonoBehaviour
     {
 
         StartCoroutine("BreakTube");
+        Player.SetActive(false);
     }
 
     // Update is called once per frame

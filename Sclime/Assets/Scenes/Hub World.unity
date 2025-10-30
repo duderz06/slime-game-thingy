@@ -242,9 +242,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3237342540399974352, guid: 5c3bf366ff952b642a2430e43781cc35, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1660269315}
-    - targetCorrespondingSourceObject: {fileID: 3740826929964426564, guid: 5c3bf366ff952b642a2430e43781cc35, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 592634154}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3bf366ff952b642a2430e43781cc35, type: 3}
 --- !u!4 &6461304 stripped
@@ -2789,7 +2786,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChangeHat
   hat: {fileID: 4025509746935252111, guid: e34b83793903e124298f9e7586e0f007, type: 3}
-  PlayerHatHolder: {fileID: 592634153}
+  PlayerHatHolder: {fileID: 0}
+  HatInList: 1
 --- !u!212 &299540543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3836,6 +3834,7 @@ MonoBehaviour:
   PlayerMat: {fileID: 562023765}
   ParticleSystem: {fileID: 82828305}
   ParticleColour: {r: 0, g: 0, b: 0, a: 0.58431375}
+  MatInList: 1
 --- !u!1 &434427831
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4588,7 @@ MonoBehaviour:
   PlayerMat: {fileID: 562023765}
   ParticleSystem: {fileID: 82828305}
   ParticleColour: {r: 1, g: 0.90449953, b: 0, a: 0.58431375}
+  MatInList: 14
 --- !u!1 &511986450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,6 +4901,7 @@ MonoBehaviour:
   PlayerMat: {fileID: 562023765}
   ParticleSystem: {fileID: 82828305}
   ParticleColour: {r: 1, g: 1, b: 1, a: 0.58431375}
+  MatInList: 12
 --- !u!1 &545477884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,7 +5452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChangeHat
   hat: {fileID: 6431665969307691941, guid: b495566d665b864468f284738e2dea97, type: 3}
-  PlayerHatHolder: {fileID: 592634153}
+  PlayerHatHolder: {fileID: 0}
+  HatInList: 4
 --- !u!212 &581802941
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5696,37 +5698,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1586016216}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
---- !u!1 &592634153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 592634154}
-  m_Layer: 2
-  m_Name: Hat Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &592634154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592634153}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9933331, z: 0}
-  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1156605509}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608092787
 GameObject:
   m_ObjectHideFlags: 0
@@ -8782,6 +8753,7 @@ MonoBehaviour:
   PlayerMat: {fileID: 562023765}
   ParticleSystem: {fileID: 82828305}
   ParticleColour: {r: 0.8490566, g: 0.61761606, b: 0, a: 0.58431375}
+  MatInList: 3
 --- !u!1 &908729572
 GameObject:
   m_ObjectHideFlags: 0
@@ -9673,7 +9645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChangeHat
   hat: {fileID: 1206285683980514047, guid: d79f8e833643a0841bf216589ebc7c87, type: 3}
-  PlayerHatHolder: {fileID: 592634153}
+  PlayerHatHolder: {fileID: 0}
+  HatInList: 14
 --- !u!212 &996275158
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10308,7 +10281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChangeHat
   hat: {fileID: 5546490331271931661, guid: d17a355af6546ac4997d3fe4a5295b72, type: 3}
-  PlayerHatHolder: {fileID: 592634153}
+  PlayerHatHolder: {fileID: 0}
+  HatInList: 2
 --- !u!212 &1088046067
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10579,6 +10553,7 @@ MonoBehaviour:
   PlayerMat: {fileID: 562023765}
   ParticleSystem: {fileID: 82828305}
   ParticleColour: {r: 0.48547792, g: 0, b: 1, a: 0.58431375}
+  MatInList: 7
 --- !u!1 &1122413468
 GameObject:
   m_ObjectHideFlags: 0
@@ -10905,11 +10880,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7475811911676465880, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
   m_PrefabInstance: {fileID: 139396336}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1156605509 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3740826929964426564, guid: 5c3bf366ff952b642a2430e43781cc35, type: 3}
-  m_PrefabInstance: {fileID: 4693655}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1172156805
 GameObject:
   m_ObjectHideFlags: 0
@@ -11096,6 +11066,7 @@ MonoBehaviour:
   PlayerMat: {fileID: 562023765}
   ParticleSystem: {fileID: 82828305}
   ParticleColour: {r: 1, g: 0, b: 0.23529412, a: 0.58431375}
+  MatInList: 0
 --- !u!1 &1175931023
 GameObject:
   m_ObjectHideFlags: 0
@@ -13463,6 +13434,7 @@ MonoBehaviour:
   PlayerMat: {fileID: 562023765}
   ParticleSystem: {fileID: 82828305}
   ParticleColour: {r: 0.14120948, g: 1, b: 0, a: 0.58431375}
+  MatInList: 4
 --- !u!1 &1488391370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7629729671775362197, guid: 5c3bf366ff952b642a2430e43781cc35, type: 3}
@@ -16480,7 +16452,7 @@ Transform:
   m_GameObject: {fileID: 1789381198}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000030845408, y: -0.0000030845408, z: 0.70710677, w: 0.70710677}
-  m_LocalPosition: {x: 0.418, y: 0, z: 0.8}
+  m_LocalPosition: {x: 0.418, y: 0.001, z: 0.7}
   m_LocalScale: {x: 0.30927202, y: 0.08984724, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16557,7 +16529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChangeHat
   hat: {fileID: 0}
-  PlayerHatHolder: {fileID: 592634153}
+  PlayerHatHolder: {fileID: 0}
+  HatInList: 0
 --- !u!65 &1789381202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17096,7 +17069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChangeHat
   hat: {fileID: 8617262091499075938, guid: d3c09b2f9c6ddfa4cab7d95ef129f0d8, type: 3}
-  PlayerHatHolder: {fileID: 592634153}
+  PlayerHatHolder: {fileID: 0}
+  HatInList: 6
 --- !u!212 &1839822370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20436,7 +20410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonChangeHat
   hat: {fileID: 4208560520002001850, guid: 75e61db357cfd5d498a363d7caeb7b8d, type: 3}
-  PlayerHatHolder: {fileID: 592634153}
+  PlayerHatHolder: {fileID: 0}
+  HatInList: 9
 --- !u!212 &2138992582
 SpriteRenderer:
   m_ObjectHideFlags: 0

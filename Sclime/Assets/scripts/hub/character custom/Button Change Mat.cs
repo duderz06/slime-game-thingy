@@ -7,6 +7,7 @@ public class ButtonChangeMat : MonoBehaviour
     public Renderer PlayerMat;
     public ParticleSystem ParticleSystem;
     public Color ParticleColour;
+    public int MatInList = 0;
 
     private StateHandler SH;
 
@@ -31,6 +32,8 @@ public class ButtonChangeMat : MonoBehaviour
 
         var ParticleMainThing = ParticleSystem.main;
         ParticleMainThing.startColor = ParticleColour;
+
+        PlayerCustomizationHolder.MatChosen = MatInList;
 
     }
 

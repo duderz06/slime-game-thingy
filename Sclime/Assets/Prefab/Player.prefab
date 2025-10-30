@@ -5180,6 +5180,7 @@ Transform:
   m_Children:
   - {fileID: 5718097180721771994}
   - {fileID: 4876156018867590217}
+  - {fileID: 1413819740361109159}
   m_Father: {fileID: 3237342540399974352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9046504976332597848
@@ -5359,7 +5360,7 @@ GameObject:
   - component: {fileID: 5564455733303556730}
   - component: {fileID: 8075088485459129654}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Player Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5612,6 +5613,37 @@ MonoBehaviour:
   strafeSpeed: 5
   jumpForce: 5
   grounded: 1
+--- !u!1 &7160580610415090753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1413819740361109159}
+  m_Layer: 2
+  m_Name: Hat Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1413819740361109159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160580610415090753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.9933331, z: 0}
+  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3740826929964426564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7544800112045119382
 GameObject:
   m_ObjectHideFlags: 0

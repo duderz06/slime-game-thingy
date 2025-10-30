@@ -5,14 +5,14 @@ public class ButtonChangeHat : MonoBehaviour
 {
 
     public GameObject hat;
-    public GameObject PlayerHatHolder;
+    public int HatInList = 0;
 
    
-
-
     public void OnMouseDown() {
 
+        PlayerCustomizationHolder.HatChosen = HatInList;
 
+        GameObject PlayerHatHolder = GameObject.Find("Hat Holder");
 
 
         foreach (Transform child in PlayerHatHolder.transform)
