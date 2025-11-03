@@ -22,14 +22,26 @@ public class Interact : MonoBehaviour
     private MeshRenderer emr;
 
 
+    public Quaternion BaseRotation;
+    public float SpinSpeed = 1f;
+    public bool lookatplayer=true;
+
     void Start()
     {
+        BaseRotation = transform.rotation;
+
         player = GameObject.FindWithTag("Player");
 
         Transform child = transform.Find("E");
         GameObject e = child.gameObject;
 
         emr = e.GetComponent<MeshRenderer>();
+
+        if (lookatplayer) {
+
+            StartCoroutine("LookAtPlayer");
+        
+        }
 
     }
     void FixedUpdate()
@@ -102,7 +114,52 @@ public class Interact : MonoBehaviour
     }
 
 
+    public IEnumerator LookAtPlayer() {
 
+        while (true)
+        {
+            Quaternion rotation;
+
+            if (!playerinrange)
+            {
+
+                rotation = BaseRotation;
+
+            }
+
+
+            else
+            {
+                Vector3 dir = player.transform.position - transform.position;
+
+                dir.y = 0f; 
+
+
+                if (dir.sqrMagnitude > 0.001f)
+                {
+                    rotation = Quaternion.LookRotation(dir);
+
+                }
+
+
+                else
+                {
+                    rotation = transform.rotation;
+
+                }
+
+
+            }
+
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, SpinSpeed * Time.deltaTime);
+
+
+            yield return null;
+        }
+
+
+    }
 
 
 }

@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class dialouge : MonoBehaviour
 {
 
 
     public List<string> dialog;
-    public GameObject dialogbox;
-    public TextMeshProUGUI dialogtext;
+    private GameObject dialogbox;
+    private TextMeshProUGUI dialogtext;
 
 
     private GameObject player;
@@ -100,7 +101,7 @@ public class dialouge : MonoBehaviour
     }
     
 
-    void Start()
+    void Awake()
     {
 
         player = GameObject.FindWithTag("Player");
@@ -111,6 +112,16 @@ public class dialouge : MonoBehaviour
 
         PWS = FindAnyObjectByType<PlayerWallStick>();
         SH = FindAnyObjectByType<StateHandler>();
+
+
+        dialogbox = GameObject.Find("dialog box");
+        dialogtext = GameObject.Find("dialog text").GetComponent<TextMeshProUGUI>();
+
+    }
+
+    void Start()
+    {
+        dialogbox.SetActive(false);
 
     }
 
