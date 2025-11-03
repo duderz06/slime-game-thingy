@@ -13,12 +13,14 @@ public class PlayerCustomizationHolder : MonoBehaviour
     public static int HatChosen = 0;
 
 
+    public static Color ParticleColor;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         
         Renderer PlayerMatHolder = GameObject.Find("Player Slime").GetComponent<Renderer>();
-        Debug.Log(PlayerMatHolder);
+        ParticleSystem SlimeParticles = GameObject.Find("slime particles").GetComponent<ParticleSystem>();
         PlayerMatHolder.material = Mats[MatChosen];
 
         if (HatChosen > 0)

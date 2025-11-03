@@ -34,6 +34,7 @@ public class ButtonChangeMat : MonoBehaviour
         ParticleMainThing.startColor = ParticleColour;
 
         PlayerCustomizationHolder.MatChosen = MatInList;
+        PlayerCustomizationHolder.ParticleColor = ParticleColour;
 
     }
 
