@@ -137,7 +137,7 @@ public class Interact : MonoBehaviour
 
                 if (dir.sqrMagnitude > 0.001f)
                 {
-                    rotation = Quaternion.LookRotation(dir);
+                    rotation = Quaternion.LookRotation(dir, BaseRotation * Vector3.up);
 
                 }
 
