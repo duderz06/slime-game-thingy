@@ -134,14 +134,14 @@ public class PlayerWallStick : MonoBehaviour
             Vector3 B = center + rotation * Vector3.forward * radius;
             Vector3 AB = B - A;
 
-            Debug.DrawLine(A, B, Color.red, 0.1f);
+            // Debug.DrawLine(A, B, Color.red, 0.1f);
 
-            if (Physics.Raycast(A, AB, out hit, AB.magnitude * 1.001f, layer))
-            {
-                Debug.DrawLine(A, hit.point, Color.green, 0.1f);
-                Debug.DrawRay(hit.point, hit.normal * 0.5f, Color.cyan, 0.1f);
-                return true;
-            }
+            // if (Physics.Raycast(A, AB, out hit, AB.magnitude * 1.001f, layer))
+            // {
+            //     Debug.DrawLine(A, hit.point, Color.green, 0.1f);
+            //     Debug.DrawRay(hit.point, hit.normal * 0.5f, Color.cyan, 0.1f);
+            //     return true;
+            // }
         }
 
         hit = new RaycastHit();
