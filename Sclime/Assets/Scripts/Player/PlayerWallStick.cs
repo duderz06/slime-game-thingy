@@ -18,6 +18,11 @@ public class PlayerWallStick : MonoBehaviour
     private bool unsticking = false;
     private bool queUnstick = false;
 
+    [Header("Raycast")]
+    public int arcResolution = 6;
+    public float arcAngle = 270f;
+    private float arcRadius;
+
     [Header("Strafe")]
     public float strafeSpeed = 5f;
     private bool strafing = false;
@@ -25,11 +30,12 @@ public class PlayerWallStick : MonoBehaviour
     [Header("Jump")]
     public float jumpForce = 10f;
     private float jumpLeniency = 0.5f;
-    public bool grounded = true;
+    private bool grounded = false;
 
     void Start()
     {
         rb = player.GetComponent<Rigidbody>();
+        arcRadius = speed;
     }
 
     private void Update()
@@ -68,7 +74,7 @@ public class PlayerWallStick : MonoBehaviour
 
     private void Eject() //launches player from wall if unsticking or switching
     {
-        rb.AddForce(player.up * jumpForce / 2, ForceMode.Impulse);
+        rb.AddForce(player.up + direction * jumpForce, ForceMode.Impulse);
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         player.rotation = Quaternion.identity;
         Invoke(nameof(ResetLeniancy), jumpLeniency);
@@ -76,10 +82,6 @@ public class PlayerWallStick : MonoBehaviour
 
     void FixedUpdate()
     {
-        float arcAngle = 270;
-        float arcRadius = speed;
-        int arcResolution = 6;
-
         if (strafing)
         {
             rb.AddForce(direction.normalized * strafeSpeed, ForceMode.Force);
@@ -99,12 +101,12 @@ public class PlayerWallStick : MonoBehaviour
                 }
 
                 rb.useGravity = false;
-                rb.linearVelocity = new Vector3(0, 0, 0);
+                rb.linearVelocity = Vector3.zero;
             }
-            else if (grounded)
-            {
-                queUnstick = true;
-            }
+            // else if (grounded)
+            // {
+            //     queUnstick = true;
+            // }
         }
 
         if (queUnstick)

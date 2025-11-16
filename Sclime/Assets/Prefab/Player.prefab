@@ -5610,9 +5610,10 @@ MonoBehaviour:
     m_Bits: 8
   player: {fileID: 1046327832457705307}
   rot: {x: 0, y: 0, z: 0, w: 1}
-  strafeSpeed: 5
-  jumpForce: 10
-  grounded: 1
+  arcResolution: 6
+  arcAngle: 270
+  strafeSpeed: 15
+  jumpForce: 12
 --- !u!1 &7544800112045119382
 GameObject:
   m_ObjectHideFlags: 0
