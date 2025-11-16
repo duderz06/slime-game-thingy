@@ -63,12 +63,13 @@ public class PlayerWallStick : MonoBehaviour
     {
         unsticking = true;
         grounded = false;
-        Invoke(nameof(Eject), 0.5f);
+        Invoke(nameof(Eject), 0.01f);
     }
 
     private void Eject() //launches player from wall if unsticking or switching
     {
-        rb.AddForce(player.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(player.up * jumpForce / 2, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         player.rotation = Quaternion.identity;
         Invoke(nameof(ResetLeniancy), jumpLeniency);
     }
@@ -92,8 +93,8 @@ public class PlayerWallStick : MonoBehaviour
                 grounded = true;
                 if (isMoving && !unsticking)
                 {
-                    rb.MovePosition(hit.point);
-                    //player.position = hit.point;
+                    //rb.MovePosition(hit.point);
+                    player.position = hit.point;
                     player.rotation = Quaternion.FromToRotation(player.up, hit.normal) * player.rotation;
                 }
 

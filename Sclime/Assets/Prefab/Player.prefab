@@ -4999,6 +4999,7 @@ MonoBehaviour:
   PWS: {fileID: 1356366717685369253}
   StickMat: {fileID: 2100000, guid: db047cbb466a6ee4a8319298c0ebe180, type: 2}
   BounceMat: {fileID: 2100000, guid: be069c508fb81964ab9932c8fe262973, type: 2}
+  Player: {fileID: 0}
   PlayerMat: {fileID: 5564455733303556730}
   SlimePart: {fileID: 587487029115551604}
   StickPartColor: {r: 1, g: 0, b: 0.23529412, a: 0.58431375}
@@ -5602,7 +5603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18f36238dc6b634dbef84c5c48f0591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 0.3
+  speed: 0.35
   isMoving: 0
   groundLayer:
     serializedVersion: 2
@@ -5610,7 +5611,7 @@ MonoBehaviour:
   player: {fileID: 1046327832457705307}
   rot: {x: 0, y: 0, z: 0, w: 1}
   strafeSpeed: 5
-  jumpForce: 5
+  jumpForce: 10
   grounded: 1
 --- !u!1 &7544800112045119382
 GameObject:
@@ -5740,7 +5741,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.25
-  m_Center: {x: 0, y: 0.2, z: 0}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &8363924273642436208
 MonoBehaviour:
   m_ObjectHideFlags: 0
