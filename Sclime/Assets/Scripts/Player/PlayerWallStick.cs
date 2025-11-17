@@ -136,12 +136,12 @@ public class PlayerWallStick : MonoBehaviour
 
             // Debug.DrawLine(A, B, Color.red, 0.1f);
 
-            // if (Physics.Raycast(A, AB, out hit, AB.magnitude * 1.001f, layer))
-            // {
+            if (Physics.Raycast(A, AB, out hit, AB.magnitude * 1.001f, layer))
+            {
             //     Debug.DrawLine(A, hit.point, Color.green, 0.1f);
             //     Debug.DrawRay(hit.point, hit.normal * 0.5f, Color.cyan, 0.1f);
-            //     return true;
-            // }
+                return true;
+            }
         }
 
         hit = new RaycastHit();
