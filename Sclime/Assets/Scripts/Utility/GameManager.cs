@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu() { SceneManager.LoadScene("Main-Menu", LoadSceneMode.Single); }
 
-    public void GoToLevelSelect() { SceneManager.LoadScene("Level-Select", LoadSceneMode.Single); }
+    public void GoToLevelSelect() { SceneManager.LoadScene("Hub World", LoadSceneMode.Single); }
 
     public void QuitGame() { Application.Quit(); Debug.Log("Player Quit"); }
 
