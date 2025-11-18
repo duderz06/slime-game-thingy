@@ -30,6 +30,11 @@ public class ButtonChangeHat : MonoBehaviour
             madehat.transform.SetParent(PlayerHatHolder.transform);
             madehat.transform.localPosition = hat.transform.position;
             madehat.transform.localRotation = hat.transform.rotation;
+
+            //madehat.transform.localPosition = Vector3.zero;
+            //madehat.transform.localRotation = Quaternion.identity;
+
+
         }
 
     }
