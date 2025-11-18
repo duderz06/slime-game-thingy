@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerLook : MonoBehaviour
 {
+
+	private bool LockCursor = true;
+
     public float Sensitivity {
     get { return sensitivity; }
     set { sensitivity = value; }
@@ -33,5 +36,33 @@ public class PlayerLook : MonoBehaviour
 
 		transform.localRotation = yQuat;
 		rotationHolder.localRotation = xQuat;
+
+
     }
+
+	public void ToggleCursor() {
+
+		LockCursor = !LockCursor;
+
+		if (LockCursor)
+		{
+			Cursor.lockState = CursorLockMode.Locked; //makes cursor in middle of screen
+			Cursor.visible = false; //hides cursor
+
+
+
+		}
+
+		else {
+
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true; 
+
+        }
+
+
+    }
+
+
+
 }

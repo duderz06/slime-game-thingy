@@ -33,6 +33,23 @@ public class StateHandler : MonoBehaviour
     {
         var SlimePartMain = SlimePart.main;
 
+
+
+
+        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Stick = !Stick;
+            PWS.SwapState(Stick);
+            SwapState();
+        }
+    }
+
+    public void SwapState() {
+
+        var SlimePartMain = SlimePart.main;
+
         if (Stick)
         {
             StateImg.sprite = StickSprite;
@@ -46,10 +63,8 @@ public class StateHandler : MonoBehaviour
             SlimePartMain.startColor = BouncePartColor;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Stick = !Stick;
-            PWS.SwapState(Stick);
-        }
+
     }
+
+
 }
