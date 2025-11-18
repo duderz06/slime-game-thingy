@@ -5660,7 +5660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Playerpickup
   holdPoint: {fileID: 2761677622072814683}
   dropDistance: 2
-  dropCheckRadius: 0.25
+  dropCheckRadius: 0.5
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 59

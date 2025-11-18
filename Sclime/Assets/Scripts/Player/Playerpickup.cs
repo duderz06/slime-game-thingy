@@ -4,7 +4,7 @@ public class Playerpickup : MonoBehaviour
 {
     private GameObject heldObject = null;
     [SerializeField] private Transform holdPoint;
-    [SerializeField] private float dropDistance = 1f;
+    [SerializeField] private float pickupDistance = 1f;
     [SerializeField] private float dropCheckRadius = 0.25f;
     [SerializeField] private LayerMask obstacleLayers = ~0;
     private LayerMask originalLayer;
@@ -16,7 +16,7 @@ public class Playerpickup : MonoBehaviour
             if (heldObject == null)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, dropDistance))
+                if (Physics.Raycast(transform.position, transform.forward, out hit, pickupDistance))
                 {
                     if (hit.collider.CompareTag("Pickupable"))
                     {
@@ -31,7 +31,7 @@ public class Playerpickup : MonoBehaviour
             else
             {
                 // Calculate desired drop position in front of player
-                Vector3 dropPos = transform.position + transform.forward * dropDistance + transform.up * 0.5f;
+                Vector3 dropPos = transform.position + transform.forward * (pickupDistance) + (transform.up * 0.5f);
 
                 // Check for obstacles at the drop position using an overlap sphere
                 Collider[] overlaps = Physics.OverlapSphere(dropPos, dropCheckRadius, obstacleLayers, QueryTriggerInteraction.Ignore);
@@ -47,6 +47,16 @@ public class Playerpickup : MonoBehaviour
                             blocked = true;
                             break;
                         }
+                    }
+                }
+
+                if (!blocked)
+                {
+                    // Additionally check with a raycast to ensure no obstacles directly in front
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position, transform.forward, out hit, pickupDistance / 1.5f, obstacleLayers))
+                    {
+                        blocked = true;
                     }
                 }
 
