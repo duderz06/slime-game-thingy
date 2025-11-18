@@ -2,21 +2,43 @@ using UnityEngine;
 
 public class Forcefield : MonoBehaviour
 {
-    private GameObject[] walls;
+    [SerializeField] private GameObject[] walls;
+    [SerializeField] private bool reverse;
 
     public void Activate()
     {
-        foreach (GameObject wall in walls)
+        if (!reverse)
         {
-            wall.SetActive(true);
+            foreach (GameObject wall in walls)
+            {
+                wall.SetActive(true);
+            }
         }
+        else
+        {
+            foreach (GameObject wall in walls)
+            {
+                wall.SetActive(false);
+            }
+        }
+
     }
 
     public void Deactivate()
     {
-        foreach (GameObject wall in walls)
+        if (!reverse)
         {
-            wall.SetActive(false);
+            foreach (GameObject wall in walls)
+            {
+                wall.SetActive(false);
+            }
+        }
+        else
+        {
+            foreach (GameObject wall in walls)
+            {
+                wall.SetActive(true);
+            }
         }
     }
 }

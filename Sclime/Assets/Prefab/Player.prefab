@@ -5149,6 +5149,37 @@ Transform:
   - {fileID: 8328384950537698202}
   m_Father: {fileID: 4200215959577795166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3524596979055261933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2761677622072814683}
+  m_Layer: 2
+  m_Name: Object Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2761677622072814683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524596979055261933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1046327832457705307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4080761443485417470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5563,6 +5594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3237342540399974352}
   - component: {fileID: 1356366717685369253}
+  - component: {fileID: 8161838459323577106}
   m_Layer: 2
   m_Name: Raycaster
   m_TagString: Player
@@ -5614,6 +5646,24 @@ MonoBehaviour:
   arcAngle: 270
   strafeSpeed: 15
   jumpForce: 12
+--- !u!114 &8161838459323577106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101469652530324924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725137e6fff032b46beb355751db6610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Playerpickup
+  holdPoint: {fileID: 2761677622072814683}
+  dropDistance: 2
+  dropCheckRadius: 0.25
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 59
 --- !u!1 &7544800112045119382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,6 +5730,7 @@ Transform:
   m_Children:
   - {fileID: 2474815735835070028}
   - {fileID: 3237342540399974352}
+  - {fileID: 2761677622072814683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7303425541434697545

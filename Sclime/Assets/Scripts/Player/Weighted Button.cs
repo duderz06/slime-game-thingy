@@ -3,13 +3,18 @@ using UnityEngine;
 public class WeightedButton : MonoBehaviour
 {
     [SerializeField] private GameObject[] connectedObjects;
-    [SerializeField] private Renderer buttonRenderer;
+    [SerializeField] private Renderer[] buttonRenderer;
     [SerializeField] private Color pressedColor = Color.green;
     [SerializeField] private Color unpressedColor = Color.red;
 
     private int touchingObjectCount = 0;
 
-    private void OnCollisionEnter(Collision collision)
+    private void Awake()
+    {
+        SetButtonColor(unpressedColor);
+    }
+
+    private void OnTriggerEnter(Collider collision)
     {
         if (touchingObjectCount == 0)
         {
@@ -20,7 +25,7 @@ public class WeightedButton : MonoBehaviour
         touchingObjectCount++;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         touchingObjectCount--;
         if (touchingObjectCount <= 0)
@@ -36,7 +41,10 @@ public class WeightedButton : MonoBehaviour
     {
         if (buttonRenderer != null)
         {
-            buttonRenderer.material.color = color;
+            foreach (Renderer render in buttonRenderer)
+            {
+                render.material.color = color;
+            }
         }
     }
 
