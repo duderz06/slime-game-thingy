@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCustomizationHolder : MonoBehaviour
 {
 
+ 
 
     public List<Material> Mats = new List<Material>();
     public List<GameObject> Hats = new List<GameObject>();
@@ -19,9 +20,6 @@ public class PlayerCustomizationHolder : MonoBehaviour
     void Awake()
     {
         
-        Renderer PlayerMatHolder = GameObject.Find("Player Slime").GetComponent<Renderer>();
-        ParticleSystem SlimeParticles = GameObject.Find("slime particles").GetComponent<ParticleSystem>();
-        PlayerMatHolder.material = Mats[MatChosen];
 
         if (HatChosen > 0)
         {
@@ -35,11 +33,27 @@ public class PlayerCustomizationHolder : MonoBehaviour
 
         }
 
+        if (MatChosen > 0)
+        {
+            Renderer PlayerMatHolder = GameObject.Find("Player Slime").GetComponent<Renderer>();
+
+
+            PlayerMatHolder.material = Mats[MatChosen];
+
+            StateHandler sh = FindObjectOfType<StateHandler>();
+
+            sh.StickMat = Mats[MatChosen];
+
+            ParticleSystem SlimeParticles = GameObject.Find("slime particles").GetComponent<ParticleSystem>();
+            
+
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+     
     }
 }
