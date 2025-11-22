@@ -4,19 +4,29 @@ using UnityEngine;
 public class CollectablesHandler : MonoBehaviour
 {
     public List<Transform> Slimes = new List<Transform>();
-    public List<bool> Gotten = new List<bool>();
     public List<SpriteRenderer> ImagesHolder = new List<SpriteRenderer>();
     public List<Sprite> Images = new List<Sprite>();
 
     public Sprite EmptySprite;
+    
+    
+    private string collectibleid;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
 
+
+
         for (int i = 0; i < Slimes.Count; i++) {
 
-            if (Gotten[i])
+            collectibleid = i.ToString();
+            Debug.Log(collectibleid);
+
+            bool iscollected = SlimeFriendTXTreader.Get(collectibleid) == 1;
+
+
+            if (iscollected)
             {
 
                 Slimes[i].gameObject.SetActive(true);

@@ -33,13 +33,6 @@ public class dialouge : MonoBehaviour
     private StateHandler SH;
 
 
-
-
-
-
-    private float camspeed = 5f;
-
-
     public List<AudioClip> sfx = new List<AudioClip> { };
     private int amountofsfx = 0;
 

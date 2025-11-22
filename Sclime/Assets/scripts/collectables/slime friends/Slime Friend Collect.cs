@@ -15,7 +15,7 @@ public class SlimeFriendCollect : MonoBehaviour
 
     public Material collectedmat;
 
-
+    public GameObject particles;
 
     void Start()
     {
@@ -50,6 +50,8 @@ public class SlimeFriendCollect : MonoBehaviour
 
     public void Collect()
     {
+
+        GameObject parts = Instantiate(particles, transform.position, Quaternion.identity);
 
         SlimeFriendTXTreader.Set(collectibleid, 1);
 
