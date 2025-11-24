@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerWallStick wallStick;
     public Transform rotationReader;
 
+    [HideInInspector] public bool freezeInput = false;
+
     private void Start()
     {
         wallStick = GetComponentInChildren<PlayerWallStick>();
@@ -12,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (freezeInput) return;
+
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        Vector3 direction = new Vector3(horizontal, 0f, vertical);
+        Vector3 direction = new(horizontal, 0f, vertical);
         if (direction != Vector3.zero)
         {
             rotationReader.localRotation = Quaternion.LookRotation(direction);

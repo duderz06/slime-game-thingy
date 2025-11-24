@@ -6,7 +6,8 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
 
-    public float speed = 0.2f;
+    public float moveSpeed = 0.2f;
+    public float rotSpeed = 0.2f;
 
 
     private void Start()
@@ -22,12 +23,12 @@ public class CameraFollow : MonoBehaviour
     {
         if (transform.rotation != target.rotation)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, Time.deltaTime * speed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, Time.deltaTime * rotSpeed);
         }
 
         if (transform.position != target.position)
         {
-            transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);
+            transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * moveSpeed);
         }
     }
 }

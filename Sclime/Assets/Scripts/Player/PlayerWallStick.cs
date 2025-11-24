@@ -26,7 +26,8 @@ public class PlayerWallStick : MonoBehaviour
     [Header("Strafe")]
     public float strafeSpeed = 5f;
     private bool strafing = false;
-    
+    [HideInInspector] public bool isPaused;
+
     [Header("Jump")]
     public float jumpForce = 10f;
     private float jumpLeniency = 0.5f;
@@ -40,6 +41,7 @@ public class PlayerWallStick : MonoBehaviour
 
     private void Update()
     {
+        if (isPaused) return;
         if (!grounded || !isStick)
         {
             rb.useGravity = true;
@@ -77,11 +79,12 @@ public class PlayerWallStick : MonoBehaviour
         rb.AddForce(player.up + direction * jumpForce, ForceMode.Impulse);
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         player.rotation = Quaternion.identity;
-        Invoke(nameof(ResetLeniancy), jumpLeniency);
+        Invoke(nameof(ResetLeniency), jumpLeniency);
     }
 
     void FixedUpdate()
     {
+        if (isPaused) return;
         if (strafing)
         {
             rb.AddForce(direction.normalized * strafeSpeed, ForceMode.Force);
@@ -96,8 +99,10 @@ public class PlayerWallStick : MonoBehaviour
                 if (isMoving && !unsticking)
                 {
                     //rb.MovePosition(hit.point);
-                    player.position = hit.point;
-                    player.rotation = Quaternion.FromToRotation(player.up, hit.normal) * player.rotation;
+                    //player.position = hit.point;
+                    //player.rotation = Quaternion.FromToRotation(player.up, hit.normal) * player.rotation;
+
+                    player.SetPositionAndRotation(hit.point, Quaternion.FromToRotation(player.up, hit.normal) * player.rotation);
                 }
 
                 rb.useGravity = false;
@@ -116,7 +121,7 @@ public class PlayerWallStick : MonoBehaviour
         }
     }
 
-    private void ResetLeniancy()
+    private void ResetLeniency()
     {
         unsticking = false;
     }
