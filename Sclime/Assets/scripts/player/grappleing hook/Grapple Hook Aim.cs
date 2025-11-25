@@ -11,13 +11,15 @@ public class GrappleHookAim : MonoBehaviour
 
     public bool Aiming = false;
 
-    public GameObject Reticle;
+    private GameObject Reticle;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-
-
+        //Cam = transform.Find("Main Camera");
+        //AimCamSpot = transform.Find("grapple cam spot");
+        Reticle = GameObject.Find("reticle");
+        
     }
 
     // Update is called once per frame
@@ -29,8 +31,9 @@ public class GrappleHookAim : MonoBehaviour
         {
             Cam.position = AimCamSpot.position;
 
+            
 
-            Aiming=true;
+            Aiming =true;
 
         }
 

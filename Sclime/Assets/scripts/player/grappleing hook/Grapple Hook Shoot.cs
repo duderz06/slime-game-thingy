@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class GrappleHookShoot : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class GrappleHookShoot : MonoBehaviour
     public Transform Cam;
     private GrappleHookAim GHA;
     private PlayerWallStick PWS;
+    private StateHandler SH;
 
     public float GrappleRange = 100f;
 
@@ -19,12 +21,23 @@ public class GrappleHookShoot : MonoBehaviour
 
     private Vector3 PullPoint = Vector3.zero;
 
+
+    private GameObject HookShow;
+    private GameObject MadeHook;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
+        //Cam = transform.Find("Main Camera");
+        HookShow = GameObject.Find("grapple hook");
+
         GHA = FindObjectOfType<GrappleHookAim>();
         PWS = FindObjectOfType<PlayerWallStick>();
+        SH = FindObjectOfType<StateHandler>();
+
         rb = Player.GetComponent<Rigidbody>();
+
+        SH.enabled = false;
     }
 
     // Update is called once per frame
@@ -44,12 +57,18 @@ public class GrappleHookShoot : MonoBehaviour
                     PullPoint = hit.point;
                     grappling = true;
                     rb.linearVelocity = Vector3.zero;
+                    MadeHook = Instantiate(HookShow, transform.position, transform.rotation);
+
+                    Player.rotation = Quaternion.identity;
+
+                    PWS.grounded = false;
 
                 }
             }
             else {
 
                 grappling = false;
+                Destroy(MadeHook);
 
             }
 
@@ -60,15 +79,16 @@ public class GrappleHookShoot : MonoBehaviour
         {
 
             grappling = false;
+            Destroy(MadeHook);
 
 
         }
 
 
 
-       
 
-        
+
+
 
         PWS.enabled = !grappling;
 
@@ -84,6 +104,13 @@ public class GrappleHookShoot : MonoBehaviour
             float Distance = dir.magnitude;
             float MoveDistance = PullStrength * Time.deltaTime;
 
+
+            MadeHook.transform.LookAt(PullPoint, Vector3.left);
+           
+            MadeHook.transform.position = (Player.position+PullPoint)/2f;
+
+            MadeHook.transform.localScale = new Vector3(MadeHook.transform.localScale.x, MadeHook.transform.localScale.y, Distance);
+
             if (MoveDistance >= Distance)
             {
 
@@ -91,6 +118,7 @@ public class GrappleHookShoot : MonoBehaviour
                 rb.linearVelocity = Vector3.zero;
 
                 grappling = false;
+                Destroy(MadeHook);
 
             }
 

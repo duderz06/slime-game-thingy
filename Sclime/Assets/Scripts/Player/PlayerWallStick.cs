@@ -30,7 +30,7 @@ public class PlayerWallStick : MonoBehaviour
     [Header("Jump")]
     public float jumpForce = 10f;
     private float jumpLeniency = 0.5f;
-    private bool grounded = false;
+    public bool grounded = false;
 
     void Start()
     {
