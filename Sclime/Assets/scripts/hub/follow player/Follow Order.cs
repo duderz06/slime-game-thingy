@@ -21,8 +21,8 @@ public class FollowOrder : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-
-            if (child.gameObject.activeInHierarchy && child.name.StartsWith("slime follower"))
+            //&& child.name.StartsWith("slime follower")
+            if (child.gameObject.activeInHierarchy )
             {
 
                 Followers.Add(child.gameObject);

@@ -6,8 +6,8 @@ public class CollectablesHandler : MonoBehaviour
     public List<Transform> Slimes = new List<Transform>();
     public List<SpriteRenderer> ImagesHolder = new List<SpriteRenderer>();
     public List<Sprite> Images = new List<Sprite>();
+    public List<Sprite> EmptySprites = new List<Sprite>();
 
-    public Sprite EmptySprite;
     
     
     private string collectibleid;
@@ -21,7 +21,6 @@ public class CollectablesHandler : MonoBehaviour
         for (int i = 0; i < Slimes.Count; i++) {
 
             collectibleid = i.ToString();
-            Debug.Log(collectibleid);
 
             bool iscollected = SlimeFriendTXTreader.Get(collectibleid) == 1;
 
@@ -37,7 +36,7 @@ public class CollectablesHandler : MonoBehaviour
             else {
                 Slimes[i].gameObject.SetActive(false);
 
-                ImagesHolder[i].sprite = EmptySprite;
+                ImagesHolder[i].sprite = EmptySprites[i];
 
             }
 

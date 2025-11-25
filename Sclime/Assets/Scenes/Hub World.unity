@@ -316,7 +316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (13)
+      value: reimu
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -1318,7 +1318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (9)
+      value: scissors
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -2142,7 +2142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (14)
+      value: mushroom
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -3431,7 +3431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (13)
+      value: headphones
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -5663,7 +5663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (14)
+      value: halo
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -7643,7 +7643,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (1)
+      value: helmet
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -8087,7 +8087,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (6)
+      value: hat kid
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -8390,7 +8390,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (8)
+      value: skull
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -8708,7 +8708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (3)
+      value: arrow
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -13907,32 +13907,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectablesHandler
   Slimes:
+  - {fileID: 551029212}
   - {fileID: 936894611}
   - {fileID: 643405842}
   - {fileID: 1630862753}
   - {fileID: 1935411191}
   - {fileID: 402172243}
+  - {fileID: 1042772616}
   - {fileID: 1057672565}
   - {fileID: 1279102243}
   - {fileID: 1904445988}
   - {fileID: 1142932535}
   - {fileID: 1926511073}
   - {fileID: 1773704642}
-  - {fileID: 4089441518947588907}
-  - {fileID: 551029212}
   - {fileID: 298022369}
-  - {fileID: 1042772616}
-  - {fileID: 1032201848}
-  - {fileID: 328389858}
-  - {fileID: 277321703}
   - {fileID: 2019531699}
-  - {fileID: 2118488382}
+  - {fileID: 277321703}
+  - {fileID: 1032201848}
   - {fileID: 1369639033}
   - {fileID: 625422737}
   - {fileID: 1694424338}
   - {fileID: 724508078}
   - {fileID: 510109000}
   - {fileID: 100504018}
+  - {fileID: 2118488382}
+  - {fileID: 328389858}
+  - {fileID: 4089441518947588907}
   ImagesHolder:
   - {fileID: 1272747524}
   - {fileID: 945955442}
@@ -13987,7 +13987,33 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1d8c9ab813730704d9eda17487053860, type: 3}
   - {fileID: 21300000, guid: 1d8c9ab813730704d9eda17487053860, type: 3}
   - {fileID: 21300000, guid: 1d8c9ab813730704d9eda17487053860, type: 3}
-  EmptySprite: {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  EmptySprites:
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
+  - {fileID: 21300000, guid: f96fbcb669a3ab3469353075f774575c, type: 3}
 --- !u!1 &945955440
 GameObject:
   m_ObjectHideFlags: 0
@@ -14179,7 +14205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (5)
+      value: jester
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -14386,7 +14412,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (10)
+      value: cat ears
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -15097,7 +15123,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (3)
+      value: wizard
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -16696,7 +16722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (7)
+      value: horns
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -17503,7 +17529,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (7)
+      value: scarf
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -19937,7 +19963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (1)
+      value: propeller
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -21491,7 +21517,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (11)
+      value: box
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -25463,7 +25489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (17)
+      value: bandana
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -25674,7 +25700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (5)
+      value: glasses
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -25789,7 +25815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (11)
+      value: flower crown
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -28259,7 +28285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (15)
+      value: d sunglasses
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -28535,7 +28561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (6)
+      value: mohawk
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -29301,7 +29327,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (12)
+      value: sleep
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -30099,7 +30125,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (2)
+      value: party
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -30343,7 +30369,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc (4)
+      value: bow
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
@@ -30628,7 +30654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_Name
-      value: slime follower (12)
+      value: sprout
       objectReference: {fileID: 0}
     - target: {fileID: 5230694369895208801, guid: 39c6c38f157bb5045a60417beee57ed8, type: 3}
       propertyPath: m_IsActive
@@ -32601,7 +32627,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_Name
-      value: slime npc
+      value: gold
       objectReference: {fileID: 0}
     - target: {fileID: 465660768725554284, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: m_IsActive
