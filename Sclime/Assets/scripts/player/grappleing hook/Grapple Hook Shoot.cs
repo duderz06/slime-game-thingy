@@ -38,12 +38,12 @@ public class GrappleHookShoot : MonoBehaviour
             {
                 RaycastHit hit;
 
-
                 if (Physics.Raycast(Cam.position, Cam.forward, out hit, GrappleRange, Stickable))
                 {
 
                     PullPoint = hit.point;
                     grappling = true;
+                    rb.linearVelocity = Vector3.zero;
 
                 }
             }
@@ -66,30 +66,44 @@ public class GrappleHookShoot : MonoBehaviour
 
 
 
-        if (grappling) {
+       
 
-            Vector3 dir;
+        
 
-            dir = PullPoint - Player.position;
+        PWS.enabled = !grappling;
 
+    }
 
+    void FixedUpdate()
+    {
+        if (grappling)
+        {
 
-            rb.linearVelocity = (dir.normalized * PullStrength);
+            Vector3 dir = PullPoint - Player.position;
 
-            if (Vector3.Distance(Player.position, PullPoint) < 0.15) {
+            float Distance = dir.magnitude;
+            float MoveDistance = PullStrength * Time.deltaTime;
+
+            if (MoveDistance >= Distance)
+            {
+
+                rb.position = PullPoint;
+                rb.linearVelocity = Vector3.zero;
 
                 grappling = false;
-            
+
+            }
+
+
+            else
+            {
+                rb.linearVelocity = dir.normalized * PullStrength;
+
             }
 
         }
 
 
 
-        PWS.enabled = !grappling;
-        Debug.Log(!grappling);
-
     }
-
-
 }

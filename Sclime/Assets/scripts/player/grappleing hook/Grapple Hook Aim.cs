@@ -7,7 +7,6 @@ public class GrappleHookAim : MonoBehaviour
     public Transform Cam;
     public float CamSpeed=3f;
 
-    public float TimeSlow = 0.5f;
 
 
     public bool Aiming = false;
@@ -24,23 +23,26 @@ public class GrappleHookAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (Input.GetMouseButton(1))
         {
-
             Cam.position = AimCamSpot.position;
 
-            Time.timeScale = TimeSlow;
 
             Aiming=true;
 
         }
 
-        else {
 
-            Time.timeScale = 1f;
+        else if (Input.GetMouseButtonUp(1)) { 
+
 
             Aiming = false;
         }
+        
+
+
 
 
         Reticle.SetActive(Aiming);
