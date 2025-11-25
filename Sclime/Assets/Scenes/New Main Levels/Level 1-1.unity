@@ -4831,6 +4831,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6956467647038234177, guid: dd1b3d9bd23123443983fbf3cfba29d8, type: 3}
   m_PrefabInstance: {fileID: 790356960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &804877135
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 389065378865191550, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_text
+      value: The Player cannot stick to these black surfaces
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120095975115838509, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_Name
+      value: Holo Sign (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5953822226709720778, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
 --- !u!1001 &806823122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9277,6 +9353,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3420562218174287347, guid: 8bef267fe0438f04bb2abfe927f351b1, type: 3}
   m_PrefabInstance: {fileID: 1553200642}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1578613424
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 389065378865191550, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_text
+      value: The Player can stick to these white surfaces
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120095975115838509, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_Name
+      value: Holo Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.499998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98291385
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.18406624
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -21.213
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483868001822363109, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5953822226709720778, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 64d53ef76f7799640af595baade8cd6e, type: 3}
 --- !u!4 &1578807915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2950416706397384441, guid: be0e6b8d5f7a0674cb3824e72302b8ea, type: 3}
@@ -13719,3 +13871,5 @@ SceneRoots:
   - {fileID: 1170555849}
   - {fileID: 560703414}
   - {fileID: 279865636}
+  - {fileID: 1578613424}
+  - {fileID: 804877135}
