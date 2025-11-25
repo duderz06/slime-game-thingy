@@ -103,10 +103,6 @@ public class PlayerWallStick : MonoBehaviour
                 rb.useGravity = false;
                 rb.linearVelocity = Vector3.zero;
             }
-            // else if (grounded)
-            // {
-            //     queUnstick = true;
-            // }
         }
 
         if (queUnstick)

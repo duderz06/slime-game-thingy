@@ -20,11 +20,6 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (transform.rotation != target.rotation)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, target.rotation, Time.deltaTime * speed);
-        }
-
         if (transform.position != target.position)
         {
             transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);

@@ -33,11 +33,6 @@ public class StateHandler : MonoBehaviour
     {
         var SlimePartMain = SlimePart.main;
 
-
-
-
-        
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Stick = !Stick;
