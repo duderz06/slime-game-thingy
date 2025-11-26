@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerWallStick : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerWallStick : MonoBehaviour
     public float speed = 3f;
     public bool isMoving = false;
     private bool isStick = true;
+    private bool coroutineOn = false;
+    public PlayerSFX sfx;
 
     [Header("Stick")]
     private RaycastHit hit;
@@ -53,6 +56,8 @@ public class PlayerWallStick : MonoBehaviour
         {
             strafing = false;
         }
+
+        if (grounded && isMoving && !coroutineOn) StartCoroutine(WalkSound());
     }
 
     public void SwapState(bool stick)
@@ -78,6 +83,7 @@ public class PlayerWallStick : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         player.rotation = Quaternion.identity;
         Invoke(nameof(ResetLeniancy), jumpLeniency);
+        sfx.PlayJumpSFX();
     }
 
     void FixedUpdate()
@@ -146,5 +152,14 @@ public class PlayerWallStick : MonoBehaviour
 
         hit = new RaycastHit();
         return false;
+    }
+    private IEnumerator WalkSound()
+    {
+        coroutineOn = true;
+        sfx.PlayWalkSFX();
+
+        yield return new WaitForSeconds(sfx.timeBetweenWalks);
+
+        coroutineOn = false;
     }
 }

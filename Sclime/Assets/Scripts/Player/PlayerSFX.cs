@@ -5,37 +5,15 @@ public class PlayerSFX : MonoBehaviour
     AudioSource audioSource;
     public AudioClip jumpSound;
     public AudioClip walkSound;
-    PlayerWallStick wallStick;
-    public float walkBasePitch;
-    public float walkPitchRandomness;
-    public float walkVolumeScale;
-    public float jumpPitch;
-    public int walkSoundsFrameCount;
-    private int walkSoundsTimer;
+    public float walkBasePitch = 1f;
+    public float walkPitchRandomness = 1f;
+    public float walkVolumeScale = 1f;
+    public float jumpPitch = 1f;
 
     public float timeBetweenWalks = 0.2f;
 
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        wallStick = FindAnyObjectByType<PlayerWallStick>();
-    }
-    // Update is called once per frame
-    /*void FixedUpdate()
-    {
-        Debug.Log("work");
-        if(wallStick.isMoving && wallStick.grounded && walkSoundsTimer == 0)
-        {
-            Debug.Log("play");
-            audioSource.pitch = walkBasePitch + Random.Range(-walkPitchRandomness, walkPitchRandomness);
-            audioSource.PlayOneShot(walkSound, walkVolumeScale);
-        }
-        walkSoundsTimer--;
-        if(walkSoundsTimer == 0)
-        {
-            walkSoundsTimer = walkSoundsFrameCount;
-        }
-    }*/
+    private void Start() {audioSource = GetComponent<AudioSource>();}
+
     public void PlayJumpSFX()
     {
         Debug.Log("Jump");
