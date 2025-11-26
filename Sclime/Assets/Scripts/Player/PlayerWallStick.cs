@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerWallStick : MonoBehaviour
 {
@@ -33,11 +34,12 @@ public class PlayerWallStick : MonoBehaviour
     public bool grounded = false;
     public PlayerSFX sfx;
 
+    private bool coroutineOn = false;
+
     void Start()
     {
         rb = player.GetComponent<Rigidbody>();
         arcRadius = speed;
-        sfx = GetComponent<PlayerSFX>();
     }
 
     private void Update()
@@ -55,6 +57,8 @@ public class PlayerWallStick : MonoBehaviour
         {
             strafing = false;
         }
+
+        if (grounded && isMoving && !coroutineOn) StartCoroutine(WalkSound());
     }
 
     public void SwapState(bool stick)
@@ -149,5 +153,13 @@ public class PlayerWallStick : MonoBehaviour
 
         hit = new RaycastHit();
         return false;
+    }
+
+    private IEnumerator WalkSound()
+    {
+        coroutineOn = true;
+        sfx.PlayWalkSFX();
+        yield return new WaitForSeconds(sfx.timeBetweenWalks);
+        coroutineOn = false;
     }
 }

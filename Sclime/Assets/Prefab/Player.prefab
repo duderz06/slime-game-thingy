@@ -5648,7 +5648,7 @@ MonoBehaviour:
   strafeSpeed: 15
   jumpForce: 12
   grounded: 0
-  sfx: {fileID: 0}
+  sfx: {fileID: 7407869925104124546}
 --- !u!114 &8161838459323577106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5831,6 +5831,7 @@ MonoBehaviour:
   walkVolumeScale: 1
   jumpPitch: 1
   walkSoundsFrameCount: 4
+  timeBetweenWalks: 0.3
 --- !u!82 &5287132860148477714
 AudioSource:
   m_ObjectHideFlags: 0

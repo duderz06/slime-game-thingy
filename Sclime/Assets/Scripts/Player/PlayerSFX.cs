@@ -13,16 +13,20 @@ public class PlayerSFX : MonoBehaviour
     public int walkSoundsFrameCount;
     private int walkSoundsTimer;
 
+    public float timeBetweenWalks = 0.2f;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         wallStick = FindAnyObjectByType<PlayerWallStick>();
     }
     // Update is called once per frame
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
+        Debug.Log("work");
         if(wallStick.isMoving && wallStick.grounded && walkSoundsTimer == 0)
         {
+            Debug.Log("play");
             audioSource.pitch = walkBasePitch + Random.Range(-walkPitchRandomness, walkPitchRandomness);
             audioSource.PlayOneShot(walkSound, walkVolumeScale);
         }
@@ -31,10 +35,18 @@ public class PlayerSFX : MonoBehaviour
         {
             walkSoundsTimer = walkSoundsFrameCount;
         }
-    }
+    }*/
     public void PlayJumpSFX()
     {
+        Debug.Log("Jump");
         audioSource.pitch = jumpPitch;
         audioSource.PlayOneShot(jumpSound);
+    }
+    
+    public void PlayWalkSFX()
+    {
+        Debug.Log("Walk");
+        audioSource.pitch = walkBasePitch + Random.Range(-walkPitchRandomness, walkPitchRandomness);
+        audioSource.PlayOneShot(walkSound, walkVolumeScale);
     }
 }
