@@ -340,7 +340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960016446887925663, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: 'dialog.Array.data[0]'
-      value: placeholder
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1960016446887925663, guid: 9af8032d7ad49934faca375d1dedbd0f, type: 3}
       propertyPath: 'dialog.Array.data[1]'
@@ -19770,7 +19770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ed055dce29be247a5d3b3abe399790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneSelect
-  SceneToGoTo: Level 1-6
+  SceneToGoTo: Level 1-5
 --- !u!212 &1434288995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19818,7 +19818,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1365c8efe45465e4f8dce67edba902f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b3f7c034def6a74fa06947a6703c752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23828,7 +23828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ed055dce29be247a5d3b3abe399790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneSelect
-  SceneToGoTo: Level 1-5
+  SceneToGoTo: Level 1-4
 --- !u!212 &1653964178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23876,7 +23876,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b3f7c034def6a74fa06947a6703c752, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc03bcd33caf8bf42aa3678cc406bc1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26685,7 +26685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ed055dce29be247a5d3b3abe399790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneSelect
-  SceneToGoTo: Level 1-7
+  SceneToGoTo: Level 1-6
 --- !u!212 &1857355088
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26733,7 +26733,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 99744bcd96a985b458659930f692385d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1365c8efe45465e4f8dce67edba902f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
