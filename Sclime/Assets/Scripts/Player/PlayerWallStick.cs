@@ -30,12 +30,14 @@ public class PlayerWallStick : MonoBehaviour
     [Header("Jump")]
     public float jumpForce = 10f;
     private float jumpLeniency = 0.5f;
-    private bool grounded = false;
+    public bool grounded = false;
+    public PlayerSFX sfx;
 
     void Start()
     {
         rb = player.GetComponent<Rigidbody>();
         arcRadius = speed;
+        sfx = GetComponent<PlayerSFX>();
     }
 
     private void Update()
@@ -78,6 +80,7 @@ public class PlayerWallStick : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         player.rotation = Quaternion.identity;
         Invoke(nameof(ResetLeniancy), jumpLeniency);
+        sfx.PlayJumpSFX();
     }
 
     void FixedUpdate()
