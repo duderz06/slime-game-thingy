@@ -5843,7 +5843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7172d7c2b82cb84d909db63368d3ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VelocityLimiter
-  maxVelocity: 20
+  maxVelocity: 50
 --- !u!114 &1739061877081176897
 MonoBehaviour:
   m_ObjectHideFlags: 0
