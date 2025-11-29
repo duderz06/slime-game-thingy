@@ -6,8 +6,11 @@ public class GrappleHookShoot : MonoBehaviour
 
     public Transform Cam;
     private GrappleHookAim GHA;
+    private GrapplePickUp GPU;
     private PlayerWallStick PWS;
     private StateHandler SH;
+
+    public bool GrappelingItem = false;
 
     public float GrappleRange = 100f;
 
@@ -32,6 +35,7 @@ public class GrappleHookShoot : MonoBehaviour
         HookShow = GameObject.Find("grapple hook");
 
         GHA = FindObjectOfType<GrappleHookAim>();
+        GPU = FindObjectOfType<GrapplePickUp>();
         PWS = FindObjectOfType<PlayerWallStick>();
         SH = FindObjectOfType<StateHandler>();
 
@@ -46,29 +50,56 @@ public class GrappleHookShoot : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)&&GHA.Aiming)
         {
-
-            if (!grappling)
+            
+            if (!grappling && !GrappelingItem)
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast(Cam.position, Cam.forward, out hit, GrappleRange, Stickable))
+                if (Physics.Raycast(Cam.position, Cam.forward, out hit, GrappleRange))
                 {
 
-                    PullPoint = hit.point;
-                    grappling = true;
-                    rb.linearVelocity = Vector3.zero;
-                    MadeHook = Instantiate(HookShow, transform.position, transform.rotation);
 
-                    Player.rotation = Quaternion.identity;
+                    if (hit.collider.CompareTag("Pickupable"))
+                    {
+                        GPU.PullObjectStart(hit.collider.gameObject);
 
-                    PWS.grounded = false;
+                    }
+
+                    if ((Stickable.value & (1 << hit.collider.gameObject.layer)) != 0)
+                    {
+
+
+
+                        PullPoint = hit.point;
+
+                        grappling = true;
+                        rb.linearVelocity = Vector3.zero;
+
+                        MadeHook = Instantiate(HookShow, transform.position, transform.rotation);
+
+
+                        Player.rotation = Quaternion.identity;
+
+                        PWS.grounded = false;
+
+                    }
 
                 }
+               
+
             }
-            else {
+            else if (grappling)
+            {
 
                 grappling = false;
                 Destroy(MadeHook);
+
+            }
+
+            else if (GrappelingItem) {
+
+                GPU.PullObjectStop(true);
+
 
             }
 

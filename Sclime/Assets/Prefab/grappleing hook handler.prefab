@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 998607944769075871}
   - component: {fileID: 7637302498866080470}
   - component: {fileID: 4913588011834645336}
+  - component: {fileID: 2836362473979156755}
   m_Layer: 0
   m_Name: grappleing hook handler
   m_TagString: Untagged
@@ -63,12 +64,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrappleHookShoot
   Cam: {fileID: 0}
+  GrappelingItem: 0
   GrappleRange: 123123
   Stickable:
     serializedVersion: 2
     m_Bits: 8
   Player: {fileID: 0}
   PullStrength: 50
+--- !u!114 &2836362473979156755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942033012293398366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd0ab359c0c9ed4daf88e9deca4c70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrapplePickUp
+  Cam: {fileID: 0}
+  Player: {fileID: 0}
+  PullSpeed: 30
 --- !u!1 &7917239461268477986
 GameObject:
   m_ObjectHideFlags: 0
